@@ -9,7 +9,22 @@
   --space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 24px; --space-5: 40px;
   --radius: 12px;
   --shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08);
+  /* Добавлены токены для типографики */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-sm: 0.875rem;
+  --line-height-base: 1.5;
+  --font-weight-bold: 600;
 }
+/* Тёмная тема */
+body.theme-dark {
+  --color-bg: #1a1a1a;
+  --color-fg: #f0f0f0;
+  --color-muted: #aaa;
+  --color-primary: #053e5f;
+  --color-danger: #ff4d4d;
+}
+
 
 /* Reset */
 * { box-sizing: border-box; }
@@ -121,3 +136,30 @@ body {
 }
 :disabled, [aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
 :target { outline: 2px dashed var(--color-primary); outline-offset: 4px; }
+/* Добавлены стили для breadcrumbs */
+.breadcrumbs {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+.breadcrumbs a { color: var(--color-primary); text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; }
+
+/* Добавлены стили для карточек команды */
+.team__cards {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.team__card {
+  flex: 1 1 200px;
+  background: var(--color-bg);
+  padding: var(--space-2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.team__card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}

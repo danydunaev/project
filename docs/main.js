@@ -53,3 +53,16 @@ phone?.addEventListener('input', () => {
   if (d.length >= 10) parts.push('-' + d.slice(9,11));
   phone.value = parts.join('');
 });
+// Улучшенный переключатель темы с сохранением в localStorage
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('theme-dark');
+  if (themeToggle) themeToggle.textContent = 'Светлая тема';
+}
+themeToggle?.addEventListener('click', () => {
+  document.body.classList.toggle('theme-dark');
+  const isDark = document.body.classList.contains('theme-dark');
+  themeToggle.textContent = isDark ? 'Светлая тема' : 'Тёмная тема';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
