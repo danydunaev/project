@@ -163,3 +163,29 @@ body {
   height: auto;
   border-radius: var(--radius);
 }
+.breadcrumbs {
+  font-size: 0.9rem;
+  margin: 1rem;
+}
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumbs li::after {
+  content: "›"; /* стрелочка-разделитель */
+  margin-left: 0.5rem;
+}
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+.breadcrumbs a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+.breadcrumbs li[aria-current="page"] {
+  font-weight: bold;
+  color: var(--color-muted);
+}

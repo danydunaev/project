@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- 🔹 Шапка -->
   <header class="site-header">
     <a href="index.html" class="site-header__brand">Лого</a>
     <nav>
@@ -19,10 +20,15 @@
     <button id="themeToggle" class="btn-secondary">Переключить тему</button>
   </header>
 
-  <nav class="breadcrumbs">
-    <a href="index.html">Главная</a> > <span>О нас</span>
+  <!-- 🔹 Хлебные крошки -->
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="index.html">Главная</a></li>
+      <li aria-current="page">О нас</li>
+    </ol>
   </nav>
 
+  <!-- 🔹 Контент -->
   <section class="section">
     <h2 class="section__title">О нашей компании</h2>
     <p>Здесь текст о проекте.</p>

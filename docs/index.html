@@ -6,10 +6,12 @@
   <title>Главная — Практика 4</title>
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
+  <style>
+    html { scroll-behavior: smooth; } /* плавный скролл */
+  </style>
 </head>
 <body>
   
-
   <!-- Шапка -->
   <header class="site-header">
     <a class="site-header__brand" href="index.html">Лого</a>
@@ -20,9 +22,11 @@
         <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
-      <button id="themeToggle" class="btn-secondary">Переключить тему</button>
+    <button id="themeToggle" class="btn-secondary">Переключить тему</button>
   </header>
-    <nav class="section-nav">
+
+  <!-- 🔹 Навигация-якорь -->
+  <nav class="section-nav">
     <a href="#hero">Герой</a> |
     <a href="#team">Команда</a> |
     <a href="#media">Видео</a> |
@@ -34,14 +38,14 @@
   </nav>
 
   <!-- Герой-секция -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <h1 class="hero__title">Добро пожаловать!</h1>
     <p class="hero__text">Это демо-проект для практики 4.</p>
     <button id="openDialog" type="button" class="btn-primary">Написать нам</button>
   </section>
 
   <!-- Изображение -->
-  <section class="section">
+  <section id="team" class="section">
     <h2 class="section__title">Наша команда</h2>
     <img
       class="section__img"
@@ -52,7 +56,7 @@
   </section>
 
   <!-- Видео -->
-  <section class="section">
+  <section id="media" class="section">
     <h2 class="section__title">Видео о проекте</h2>
     <div class="media">
       <iframe
@@ -67,43 +71,51 @@
   </section>
 
   <!-- Модалка -->
-  <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
-    <div class="modal__window">
-      <h2 id="dialogTitle" class="modal__title">Обратная связь</h2>
-      <form id="contactForm" class="form" method="dialog" novalidate>
-        <label class="form__label" for="name">Имя</label>
-        <input class="form__input" id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+  <section id="contact">
+    <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
+      <div class="modal__window">
+        <h2 id="dialogTitle" class="modal__title">Обратная связь</h2>
+        <form id="contactForm" class="form" method="dialog" novalidate>
+          <label class="form__label" for="name">Имя</label>
+          <input class="form__input" id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
 
-        <label class="form__label" for="email">E-mail</label>
-        <input class="form__input" id="email" name="email" type="email" required autocomplete="email">
+          <label class="form__label" for="email">E-mail</label>
+          <input class="form__input" id="email" name="email" type="email" required autocomplete="email">
 
-        <label class="form__label" for="phone">Телефон</label>
-        <input class="form__input" id="phone" name="phone" type="tel" inputmode="tel"
-               aria-describedby="phoneHelp"
-               placeholder="+7 (___) ___-__-__"
-               required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-        <small id="phoneHelp" class="form__help">Формат: +7 (900) 000-00-00</small>
+          <label class="form__label" for="phone">Телефон</label>
+          <input class="form__input" id="phone" name="phone" type="tel" inputmode="tel"
+                 aria-describedby="phoneHelp"
+                 placeholder="+7 (___) ___-__-__"
+                 required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+          <small id="phoneHelp" class="form__help">Формат: +7 (900) 000-00-00</small>
 
-        <label class="form__label" for="date">Дата</label>
-        <input class="form__input" id="date" name="date" type="date">
+          <label class="form__label" for="date">Дата</label>
+          <input class="form__input" id="date" name="date" type="date">
 
-        <label class="form__label" for="topic">Тема</label>
-        <select class="form__input" id="topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option>Вопрос</option>
-          <option>Заказ</option>
-        </select>
+          <label class="form__label" for="topic">Тема</label>
+          <select class="form__input" id="topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option>Вопрос</option>
+            <option>Заказ</option>
+          </select>
 
-        <label class="form__label" for="message">Сообщение</label>
-        <textarea class="form__input" id="message" name="message" rows="4" required></textarea>
+          <label class="form__label" for="message">Сообщение</label>
+          <textarea class="form__input" id="message" name="message" rows="4" required></textarea>
 
-        <div class="form__actions">
-          <button type="button" id="closeDialog" class="btn-secondary">Закрыть</button>
-          <button type="submit" class="btn-primary">Отправить</button>
-        </div>
-      </form>
-    </div>
-  </dialog>
+          <div class="form__actions">
+            <button type="button" id="closeDialog" class="btn-secondary">Закрыть</button>
+            <button type="submit" class="btn-primary">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+  </section>
 
+</body>
+</html>
+ <footer>
+    <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+    <p>Телефон: +7 (123) 456-78-90</p>
+  </footer>
 </body>
 </html>
